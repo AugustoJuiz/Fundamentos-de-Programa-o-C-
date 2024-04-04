@@ -1,0 +1,37 @@
+Ex 19
+Alice gosta muito da letra A. Alice classifica como string harmônica todas as strings onde mais da metade dos caracteres são A. Por exemplo: "aaabb" e "abaa" são strings harmônicas; porém, "xaya" e "abbba" não são. Dada uma string qualquer (sem espaços), Alice quer apagar algumas de suas letras para torná-la harmônica. Alice pediu a sua ajuda para escrever um programa que informe qual o maior tamanho da string resultante após ela apagar algumas de suas letras, para torná-la harmônica. Considere que a entrada conterá somente letras minúsculas e haverá ao menos um caractere "a", de forma que sempre existe uma resposta.
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   char str[50];
+   int i = 0;
+   int tamanho=0;
+   int c=0;
+
+   scanf("%s", str);
+
+   while(str[i] != '\0')
+   {
+      if(str[i] == 'a')
+      {
+         c++;
+      }
+      i++;
+   }
+
+   tamanho = strlen(str);
+
+   if(c > tamanho / 2)
+   {
+      printf("%d", tamanho);
+   }
+   else
+   {
+      printf("%d", c * 2 - 1);
+   }
+
+   return 0;
+}

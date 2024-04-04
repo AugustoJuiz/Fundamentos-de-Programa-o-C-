@@ -1,0 +1,128 @@
+Meu Ex14
+Faça um programa que leia um número inteiro longo representando o CPF de uma pessoa e, a seguir, mostre o número de vezes que cada dígito aparece no CPF. Siga o formato de saída apresentado no exemplo do Moodle.
+intput: 12345678912
+saida:
+0 = 0
+1 = 2
+2 = 2
+3 = 1
+4 = 1
+5 = 1
+6 = 1
+7 = 1
+8 = 1
+9 = 1
+
+#include <stdio.h>
+
+int main()
+{
+    long long int CPF[11];
+    int vet [10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    int i, j;
+    int c0 = 0;
+    int c1 = 0;
+    int c2 = 0;
+    int c3 = 0;
+    int c4 = 0;
+    int c5 = 0;
+    int c6 = 0;
+    int c7 = 0;
+    int c8 = 0;
+    int c9 = 0;
+    
+    scanf("%lld", CPF);
+    
+    //CPF
+    for(j=0; j<11; j++)
+    {
+        //vet
+        for(i=0; i<10; i++)
+        {
+            if(CPF[j]==vet[i])
+            {
+                if(i==0)
+                {
+                    c0++;
+                }
+                else if (i==1)
+                {
+                    c1++;
+                }
+                else if (i==2)
+                {
+                    c2++;
+                }
+                else if (i==3)
+                {
+                    c3++;
+                }
+                else if (i==4)
+                {
+                    c4++;
+                }
+                else if (i==5)
+                {
+                    c5++;
+                }
+                else if (i==6)
+                {
+                    c6++;
+                }
+                else if (i==7)
+                {
+                    c7++;
+                }
+                else if (i==8)
+                {
+                    c8++;
+                }
+                else if (i==9)
+                {
+                    c9++;
+                }
+            }
+        }
+    }
+    
+    printf("0 = %d\n", c0);
+    printf("1 = %d\n", c1);
+    printf("2 = %d\n", c2);
+    printf("3 = %d\n", c3);
+    printf("4 = %d\n", c4);
+    printf("5 = %d\n", c5);
+    printf("6 = %d\n", c6);
+    printf("7 = %d\n", c7);
+    printf("8 = %d\n", c8);
+    printf("9 = %d\n", c9);
+    
+    return 0;
+}
+
+Chat GPT
+
+#include <stdio.h>
+
+int main() 
+{
+    long long int cpf;
+    int cont[10] = {0};
+    int digito;
+    int i;
+
+    scanf("%lld", &cpf);
+
+    while (cpf != 0) 
+    {
+        digito = cpf%10;
+        cont[digito]++;
+        cpf = cpf/10;
+    }
+
+    for (i = 0; i < 10; i++) 
+    {
+        printf("%d = %d\n", i, cont[i]);
+    }
+
+    return 0;
+}
