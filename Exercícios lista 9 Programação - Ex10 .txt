@@ -1,64 +1,6 @@
 Meu exercicio 10
 Ler duas strings A e B e mostrar quantas vezes a string A ocorre dentro da string B.
 
-
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    char A[50];
-    char B[50];
-    int cont=0;
-    int i, j;
-    int tamanho=0;
-    int tamanho2=0;
-    
-    scanf("%[^\n] %[^\n]", A, B);
-    
-    tamanho = strlen(A);
-    tamanho2 = strlen(B);
-        
-    if(tamanho > tamanho2)
-    {
-        //1
-        for(i=0; i<tamanho; i = i + tamanho2)
-        {
-            //2
-            for(j=0; j<tamanho; j = j+tamanho2)
-            {
-                if( (A[j] && A[j+1]) == (  B[i] && B[i+1]) )
-                {   
-                    cont++;
-                }
-            }
-        }
-    }
-    
-    else if(tamanho2 > tamanho)
-    {
-        //2
-        for(j=0; j<tamanho2; j = j + tamanho)
-        {
-            //1
-            for(i=0; i<tamanho; i = i+tamanho2)
-            {
-                if( (A[j] && A[j+1]) == (  B[i] && B[i+1]) )
-                {   
-                    cont++;
-                }
-            }
-        }
-    }
-    
-    printf("%d", cont);
-    
-    return 0;
-}
-
-ChatGPT
-
 #include <stdio.h>
 #include <string.h>
 
